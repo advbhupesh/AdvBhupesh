@@ -1016,74 +1016,46 @@ h3 {
   color: #F2C64D;
 }
 
-/* ===== Base Slider ===== */
-.slider_area {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-}
+/*  header css pawan*/
 
-/* Desktop background image */
-.slider_bg_1 {
-  background-image: url('../img/banner/banner.png'); /* desktop path */
+/* Desktop Background */
+.slider_area_inner {
+  background-image: url('../img/banner/banner.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 500px;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Left align text */
-  padding: 0 40px; /* left padding */
+  justify-content: flex-start;
+  padding: 0 40px;
   position: relative;
 }
 
-/* Text block */
-.slider_content {
-  max-width: 600px;
-  color: #fff;
-  text-align: left; /* Text left aligned */
+.slider_mobile_img {
+  display: none; /* mobile ke liye hidden */
 }
 
 .slider_content h3 {
   font-size: 48px;
-  line-height: 1.2;
-  font-weight: 700;
-  margin-bottom: 20px;
   color: #fff;
 }
-
 .slider_content p {
   font-size: 20px;
-  margin-bottom: 30px;
   color: #ddd;
 }
 
 .boxed-btn4 {
-  display: inline-block;
   padding: 12px 30px;
   background: #ffb400;
   color: #000;
   text-decoration: none;
-  font-weight: 600;
-  border-radius: 4px;
-  transition: 0.3s;
-}
-.boxed-btn4:hover {
-  background: #111;
-  color: #fff;
-}
-
-/* Mobile image hidden by default */
-.slider_mobile_img {
-  display: none;
-  width: 100%;
-  height: auto;
 }
 
 /* ===== Mobile Styles ===== */
 @media (max-width: 768px) {
-  .slider_bg_1 {
-    background: none;
+  .slider_area_inner {
+    background: none; /* remove background to avoid crop */
     min-height: auto;
     padding: 0;
     display: block;
@@ -1091,114 +1063,48 @@ h3 {
 
   .slider_mobile_img {
     display: block;
+    width: 100%;
+    height: auto;
   }
 
   .slider_content {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 12%; /* Image ke upar text laao */
+    left: 5%;
     width: 90%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    text-align: left;
     color: #fff;
     z-index: 2;
   }
 
-  .slider_bg_1::before {
+  /* Overlay for readability */
+  .slider_area_inner::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,.45);
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
   }
 
   .slider_content h3 {
-    font-size: 28px;
-    line-height: 34px;
+    font-size: 18px; /* chota font mobile ke liye */
+    line-height: 1.2;
   }
+
   .slider_content p {
-    font-size: 16px;
-    margin-bottom: 20px;
+    font-size: 12px;
+    margin-bottom: 8px;
   }
+
   .boxed-btn4 {
-    padding: 10px 22px;
-    font-size: 14px;
+    padding: 7px 15px;
+    font-size: 11px;
   }
 }
 
 
-/* line 7, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_slider.scss */
-.slider_area {
-  padding: 0 50px;
-  background: #000;
-}
 
-@media (max-width: 767px) {
-  /* line 7, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_slider.scss */
-  .slider_area {
-    padding: 0 20px;
-  }
-}
-
-/* line 14, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_slider.scss */
-.slider_area_inner {
-  height: 800px;
-  position: relative;
-  z-index: 8;
-  position: relative;
-  z-index: 8;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-}
-
-@media (max-width: 767px) {
-  /* line 14, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_slider.scss */
-  .slider_area_inner {
-    height: 420px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  /* line 14, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_slider.scss */
-  .slider_area_inner {
-    height: 500px;
-  }
-}
-
-@media (min-width: 992px) and (max-width: 1200px) {
-  /* line 14, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_slider.scss */
-  .slider_area_inner {
-    height: 500px;
-    background-position: right;
-  }
-}
-
-@media (min-width: 1200px) and (max-width: 1500px) {
-  /* line 14, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_slider.scss */
-  .slider_area_inner {
-    height: 600px;
-    background-position: right;
-  }
-}
-
-/* line 37, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_slider.scss */
-.slider_area_inner .single_slider {
-  position: relative;
-  z-index: 8;
-}
-
-/* line 41, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_slider.scss */
-.slider_area_inner .single_slider .slider_text h3 {
-  color: #ffffff;
-  font-weight: 400;
-  font-family: "Playfair Display", serif;
-  font-size: 56px;
-  line-height: 68px;
-  position: relative;
-  z-index: 8;
-  text-transform: capitalize;
-}
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 @media (max-width: 767px) {
   /* line 41, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_slider.scss */
